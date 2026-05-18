@@ -1,16 +1,192 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdul Malik – Pain Relief Expert</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-dark: #1e2e1a;
+      --green-mid:  #2a3d24;
+      --green-deep: #162211;
+      --gold:       #c9963a;
+      --gold-light: #e0b96a;
+      --cream:      #f5f0e8;
+      --cream-dark: #ede7d9;
+      --white:      #ffffff;
+      --text-light: rgba(255,255,255,0.82);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--green-dark); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--green-dark); display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+    .nav-brand { display: flex; align-items: center; gap: 12px; }
+    .nav-logo { width: 42px; height: 42px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .nav-name { font-family: 'Cormorant Garamond', serif; color: var(--white); font-size: 17px; font-weight: 400; letter-spacing: 0.03em; }
+    .nav-cta { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1.5px solid var(--gold); color: var(--gold); padding: 9px 22px; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500; text-decoration: none; letter-spacing: 0.05em; transition: all 0.3s ease; }
+    .nav-cta:hover { background: var(--gold); color: var(--green-dark); }
+    .hero { min-height: 100vh; background: var(--green-dark); position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; overflow: hidden; }
+    .hero::before { content: '🌿'; position: absolute; font-size: 320px; opacity: 0.04; top: -60px; left: -60px; transform: rotate(-20deg); pointer-events: none; }
+    .hero::after { content: '🌿'; position: absolute; font-size: 320px; opacity: 0.04; bottom: -80px; right: -60px; transform: rotate(30deg); pointer-events: none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(201,150,58,0.5); background: rgba(201,150,58,0.1); color: var(--gold-light); padding: 7px 20px; border-radius: 50px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 32px; animation: fadeUp 0.8s ease both; }
+    .hero-tamil { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(255,255,255,0.65); font-size: clamp(18px, 3vw, 26px); line-height: 1.5; margin-bottom: 24px; animation: fadeUp 0.9s 0.1s ease both; }
+    .hero-headline { font-family: 'Cormorant Garamond', serif; color: var(--white); font-size: clamp(52px, 9vw, 96px); font-weight: 600; line-height: 1.0; margin-bottom: 8px; animation: fadeUp 1s 0.2s ease both; }
+    .hero-headline-italic { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-size: clamp(52px, 9vw, 96px); font-style: italic; font-weight: 400; line-height: 1.1; margin-bottom: 32px; animation: fadeUp 1s 0.3s ease both; }
+    .hero-sub { color: var(--text-light); font-size: clamp(15px, 2vw, 18px); font-weight: 300; line-height: 1.7; max-width: 520px; margin: 0 auto 16px; animation: fadeUp 1s 0.4s ease both; }
+    .hero-location { color: rgba(255,255,255,0.5); font-size: 14px; letter-spacing: 0.05em; margin-bottom: 48px; animation: fadeUp 1s 0.45s ease both; }
+    .services-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 48px; animation: fadeUp 1s 0.5s ease both; }
+    .chip { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: var(--text-light); padding: 9px 18px; border-radius: 50px; font-size: 14px; display: flex; align-items: center; gap: 6px; transition: all 0.3s; }
+    .chip:hover { background: rgba(201,150,58,0.15); border-color: var(--gold); color: var(--gold-light); }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; animation: fadeUp 1s 0.6s ease both; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--green-dark); padding: 16px 36px; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 500; text-decoration: none; letter-spacing: 0.04em; transition: all 0.3s ease; box-shadow: 0 4px 24px rgba(201,150,58,0.35); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 1.5px solid rgba(255,255,255,0.3); color: var(--white); padding: 16px 36px; border-radius: 50px; font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 400; text-decoration: none; letter-spacing: 0.04em; transition: all 0.3s ease; }
+    .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+    .section-about { background: var(--cream); padding: 100px 24px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-label { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.15; color: var(--green-dark); margin-bottom: 24px; }
+    .section-body { font-size: 17px; line-height: 1.8; color: #3d4a38; font-weight: 300; max-width: 680px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 64px; }
+    @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-photo-box { background: var(--green-dark); border-radius: 24px; aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; font-size: 80px; position: relative; overflow: hidden; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+    .stat-box { background: var(--cream-dark); border-radius: 16px; padding: 24px 20px; border: 1px solid rgba(0,0,0,0.06); }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 600; color: var(--green-dark); line-height: 1; }
+    .stat-num span { color: var(--gold); }
+    .stat-label { font-size: 13px; color: #6b7a64; margin-top: 6px; }
+    .section-treatments { background: var(--green-dark); padding: 100px 24px; }
+    .section-title-light { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.15; color: var(--white); margin-bottom: 16px; }
+    .section-body-light { font-size: 16px; line-height: 1.8; color: var(--text-light); font-weight: 300; max-width: 560px; margin-bottom: 56px; }
+    .treatments-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .treatment-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 32px 28px; transition: all 0.3s ease; }
+    .treatment-card:hover { background: rgba(201,150,58,0.1); border-color: rgba(201,150,58,0.4); transform: translateY(-4px); }
+    .treatment-icon { font-size: 36px; margin-bottom: 16px; }
+    .treatment-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .treatment-desc { font-size: 14px; color: var(--text-light); line-height: 1.6; font-weight: 300; }
+    .section-why { background: var(--cream-dark); padding: 100px 24px; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 56px; }
+    .why-card { background: var(--white); border-radius: 20px; padding: 36px 28px; border: 1px solid rgba(0,0,0,0.06); transition: box-shadow 0.3s; }
+    .why-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .why-icon { font-size: 32px; margin-bottom: 16px; }
+    .why-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--green-dark); margin-bottom: 10px; }
+    .why-text { font-size: 14px; color: #5a6655; line-height: 1.7; font-weight: 300; }
+    .section-cta { background: var(--green-deep); padding: 100px 24px; text-align: center; position: relative; overflow: hidden; }
+    .section-cta::before { content: '🤲'; position: absolute; font-size: 280px; opacity: 0.04; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+    .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 6vw, 72px); color: var(--white); font-weight: 600; line-height: 1.1; margin-bottom: 20px; }
+    .cta-title em { color: var(--gold); font-style: italic; }
+    .cta-sub { color: var(--text-light); font-size: 17px; font-weight: 300; max-width: 480px; margin: 0 auto 48px; line-height: 1.7; }
+    .cta-phone { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); color: var(--gold); font-weight: 600; letter-spacing: 0.05em; display: block; margin-bottom: 32px; text-decoration: none; transition: color 0.3s; }
+    .cta-phone:hover { color: var(--gold-light); }
+    footer { background: var(--green-dark); border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 24px; text-align: center; }
+    .footer-text { color: rgba(255,255,255,0.4); font-size: 13px; line-height: 1.8; }
+    .footer-green { color: var(--gold); }
+    .float-call { position: fixed; bottom: 28px; right: 28px; z-index: 200; width: 58px; height: 58px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 24px; text-decoration: none; box-shadow: 0 4px 20px rgba(201,150,58,0.5); transition: all 0.3s; animation: pulse 2.5s ease-in-out infinite; }
+    .float-call:hover { background: var(--gold-light); transform: scale(1.1); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 4px 20px rgba(201,150,58,0.5); } 50% { box-shadow: 0 4px 36px rgba(201,150,58,0.75); } }
+  </style>
+</head>
+<body>
 
-<!--
-**Healingpain/Healingpain** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+  <nav>
+    <div class="nav-brand">
+      <div class="nav-logo">🤲</div>
+      <span class="nav-name">Abdul Malik – Pain Relief Expert</span>
+    </div>
+    <a href="tel:+916381394751" class="nav-cta">📞 Call Now</a>
+  </nav>
 
-Here are some ideas to get you started:
+  <section class="hero" id="home">
+    <div>
+      <div class="hero-badge">🌿 கிராமத்து வைத்தியர் · MANAMELKUDI</div>
+      <p class="hero-tamil">அதிகநாள் உள்ள உடல் வலிகளை நீக்கப்படும்,<br>கிராமத்து வைத்தியர் முறையில்</p>
+      <h1 class="hero-headline">End Your Pain.</h1>
+      <h2 class="hero-headline-italic">Reclaim Your Life.</h2>
+      <p class="hero-sub">From an experienced and expert massager — trusted to heal long-lasting, chronic pain through traditional village medicine.</p>
+      <p class="hero-location">📍 Manamelkudi, Tamil Nadu · Available 24 Hours Every Day</p>
+      <div class="services-chips">
+        <span class="chip">🧠 Head</span>
+        <span class="chip">🦵 Leg</span>
+        <span class="chip">💪 Shoulder</span>
+        <span class="chip">🔄 Neck</span>
+        <span class="chip">✋ Hand</span>
+        <span class="chip">🦴 Hips</span>
+      </div>
+      <div class="hero-btns">
+        <a href="tel:+916381394751" class="btn-primary">📞 Call +91 63813 94751</a>
+        <a href="#about" class="btn-secondary">Meet Abdul Malik ↓</a>
+      </div>
+    </div>
+  </section>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+  <section class="section-about" id="about">
+    <div class="container">
+      <p class="section-label">About the Healer</p>
+      <h2 class="section-title">Traditional Healing,<br>Trusted Results.</h2>
+      <p class="section-body">Abdul Malik is a dedicated pain relief specialist based in Manamelkudi, Tamil Nadu. Using time-honoured village medicine techniques passed down through generations, he has helped hundreds of people find lasting relief from chronic pain.</p>
+      <div class="about-grid">
+        <div class="about-photo-box">🤲</div>
+        <div>
+          <p class="section-label">Why People Trust Him</p>
+          <h3 class="section-title" style="font-size: clamp(28px,4vw,40px);">Healing Hands,<br><em style="color:var(--gold);font-style:italic;">Ancient Wisdom</em></h3>
+          <p class="section-body">Every session is personalised. Abdul Malik takes time to understand each patient's unique condition before applying the right traditional technique for deep, lasting relief.</p>
+          <div class="about-stats">
+            <div class="stat-box"><div class="stat-num">500<span>+</span></div><div class="stat-label">Patients Healed</div></div>
+            <div class="stat-box"><div class="stat-num">24<span>/7</span></div><div class="stat-label">Available Always</div></div>
+            <div class="stat-box"><div class="stat-num">10<span>+</span></div><div class="stat-label">Years Experience</div></div>
+            <div class="stat-box"><div class="stat-num">6<span>+</span></div><div class="stat-label">Body Areas Treated</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-treatments" id="treatments">
+    <div class="container">
+      <p class="section-label" style="color:var(--gold);">Treatments Offered</p>
+      <h2 class="section-title-light">Areas We Heal</h2>
+      <p class="section-body-light">Specialised traditional massage therapy for all major pain areas — gentle, natural, and deeply effective.</p>
+      <div class="treatments-grid">
+        <div class="treatment-card"><div class="treatment-icon">🧠</div><div class="treatment-name">Head & Migraine</div><div class="treatment-desc">Relief from chronic headaches, migraines, and tension in the scalp and neck region.</div></div>
+        <div class="treatment-card"><div class="treatment-icon">🦵</div><div class="treatment-name">Leg & Knee Pain</div><div class="treatment-desc">Traditional techniques to ease joint pain, muscle stiffness, and leg fatigue.</div></div>
+        <div class="treatment-card"><div class="treatment-icon">💪</div><div class="treatment-name">Shoulder Pain</div><div class="treatment-desc">Deep tissue massage to release shoulder tension, frozen shoulder, and muscle knots.</div></div>
+        <div class="treatment-card"><div class="treatment-icon">🔄</div><div class="treatment-name">Neck & Spine</div><div class="treatment-desc">Targeted care for cervical pain, neck stiffness, and spinal discomfort.</div></div>
+        <div class="treatment-card"><div class="treatment-icon">✋</div><div class="treatment-name">Hand & Wrist</div><div class="treatment-desc">Relief from repetitive strain, wrist pain, and numbness in the hands and fingers.</div></div>
+        <div class="treatment-card"><div class="treatment-icon">🦴</div><div class="treatment-name">Hips & Lower Back</div><div class="treatment-desc">Effective treatment for hip joint pain, sciatica, and lower back stiffness.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-why">
+    <div class="container">
+      <p class="section-label">Why Choose Abdul Malik</p>
+      <h2 class="section-title">Natural. Trusted.<br>Effective.</h2>
+      <div class="why-grid">
+        <div class="why-card"><div class="why-icon">🌿</div><div class="why-title">100% Natural</div><div class="why-text">No medicines, no side effects. Pure traditional herbal oil massage methods proven over generations.</div></div>
+        <div class="why-card"><div class="why-icon">⏰</div><div class="why-title">Available 24/7</div><div class="why-text">Pain doesn't wait — and neither does Abdul Malik. Reach out any time of day or night.</div></div>
+        <div class="why-card"><div class="why-icon">📍</div><div class="why-title">Visit Us in Manamelkudi</div><div class="why-text">Treatment is available at our location in Manamelkudi, Tamil Nadu. Come visit us any time — we are open 24 hours every day.</div></div>
+        <div class="why-card"><div class="why-icon">❤️</div><div class="why-title">Trusted by Hundreds</div><div class="why-text">Hundreds of satisfied patients who found lasting relief after trying many other treatments.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cta" id="contact">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2 class="cta-title">Ready to End<br><em>Your Pain?</em></h2>
+      <p class="cta-sub">One call is all it takes. Abdul Malik will listen, understand your pain, and begin your healing journey.</p>
+      <a href="tel:+916381394751" class="cta-phone">📞 +91 63813 94751</a>
+      <a href="tel:+916381394751" class="btn-primary" style="font-size:17px;padding:18px 44px;">Call Now – Available 24/7</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-text">© 2025 Abdul Malik Pain Relief Specialist · All Rights Reserved · Manamelkudi, Tamil Nadu</p>
+    <p class="footer-text"><span class="footer-green">🌿 Traditional · Natural · Trusted</span></p>
+  </footer>
+
+  <a href="tel:+916381394751" class="float-call" title="Call Now">📞</a>
+
+</body>
+  </html>
